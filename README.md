@@ -2,12 +2,6 @@
 
 A mobile app (iOS/Android, plus web via Expo) that shortens URLs. It's a client for my own [URL Shortener Microservice backend](https://github.com/luchob89/fcc-URL-Shortener-Microservice), originally a freeCodeCamp Back End project.
 
-## Screenshots
-
-| Home | Success | Error |
-| --- | --- | --- |
-| ![Home screen](docs/screenshot-home.png) | ![Successful shorten](docs/screenshot-success.png) | ![Validation error](docs/screenshot-error.png) |
-
 ## Features
 
 - Enter any URL and shorten it through the backend API.
