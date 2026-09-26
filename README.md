@@ -1,50 +1,57 @@
-# Welcome to your Expo app 👋
+# React Native URL Shortener
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile app (iOS/Android, plus web via Expo) that shortens URLs. It's a client for my own [URL Shortener Microservice backend](https://github.com/luchob89/fcc-URL-Shortener-Microservice), originally a freeCodeCamp Back End project.
 
-## Get started
+## Screenshots
 
-1. Install dependencies
+| Home | Success | Error |
+| --- | --- | --- |
+| ![Home screen](docs/screenshot-home.png) | ![Successful shorten](docs/screenshot-success.png) | ![Validation error](docs/screenshot-error.png) |
+
+## Features
+
+- Enter any URL and shorten it through the backend API.
+- Client-side validation: the URL must start with `http`.
+- Loading, success, and error states while the request is in flight.
+- A running list of the URLs shortened during the session, each with a "Visit it!" button that opens the short link directly.
+- Custom fonts and a splash screen configured with `expo-font` and `expo-splash-screen`.
+
+## Tech Stack
+
+- [Expo](https://expo.dev) (SDK 52) with [Expo Router](https://docs.expo.dev/router/introduction/) for file-based routing
+- React Native 0.76 + React 18, TypeScript
+- [NativeWind](https://www.nativewind.dev/) (Tailwind CSS for React Native) for styling
+- `expo-linking` to open short URLs, `expo-font` for custom fonts
+
+## Project Structure
+
+```
+app/
+  _layout.tsx   # Root layout: loads custom fonts, controls the splash screen, sets up the Stack navigator
+  index.tsx     # Main (and only) screen: input, API call, and results list
+assets/
+  fonts/        # Custom fonts used on the main screen
+  images/       # App icon, splash image, and background
+```
+
+## How to Run
+
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Start the Expo dev server:
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. From the Expo CLI output, open the app in an iOS simulator, an Android emulator, Expo Go, or a web browser.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+The app talks to a hardcoded production backend URL (see `API_URL` in `app/index.tsx`), so no environment configuration is needed to try it out.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Backend
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This app consumes [fcc-URL-Shortener-Microservice](https://github.com/luchob89/fcc-URL-Shortener-Microservice), a Node.js URL-shortener API I also built.
