@@ -7,9 +7,9 @@
     "icon": "./assets/images/react-logo.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.React-Native-showcase"
     },
     "android": {
       "adaptiveIcon": {
@@ -31,7 +31,10 @@
           "resizeMode": "contain",
           "backgroundColor": "#16171B"
         }
-      ]
+      ],
+      "expo-font",
+      "expo-status-bar",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true

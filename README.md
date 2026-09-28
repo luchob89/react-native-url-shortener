@@ -2,6 +2,12 @@
 
 A mobile app (iOS/Android, plus web via Expo) that shortens URLs. It's a client for my own [URL Shortener Microservice backend](https://github.com/luchob89/fcc-URL-Shortener-Microservice), originally a freeCodeCamp Back End project.
 
+## Screenshots
+
+| Home | Enter a URL | Shortening... | Shortened | Multiple shortened URLs |
+| --- | --- | --- | --- | --- |
+| <img src="docs/screenshot-1.png" width="160" alt="Home screen"> | <img src="docs/screenshot-2.png" width="160" alt="Entering a URL"> | <img src="docs/screenshot-3.png" width="160" alt="Loading state"> | <img src="docs/screenshot-4.png" width="160" alt="URL shortened successfully"> | <img src="docs/screenshot-5.png" width="160" alt="Multiple shortened URLs in the list"> |
+
 ## Features
 
 - Enter any URL and shorten it through the backend API.
@@ -12,8 +18,8 @@ A mobile app (iOS/Android, plus web via Expo) that shortens URLs. It's a client 
 
 ## Tech Stack
 
-- [Expo](https://expo.dev) (SDK 52) with [Expo Router](https://docs.expo.dev/router/introduction/) for file-based routing
-- React Native 0.76 + React 18, TypeScript
+- [Expo](https://expo.dev) (SDK 57) with [Expo Router](https://docs.expo.dev/router/introduction/) for file-based routing
+- React Native 0.86 + React 19, TypeScript
 - [NativeWind](https://www.nativewind.dev/) (Tailwind CSS for React Native) for styling
 - `expo-linking` to open short URLs, `expo-font` for custom fonts
 

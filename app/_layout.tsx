@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
 import "../global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
@@ -15,11 +16,10 @@ SplashScreen.setOptions({
 
 // Layout component
 export default function RootLayout() {
-
   // Load the custom fonts
   const [loaded] = useFonts({
-    MachineryScript: require('../assets/fonts/MachineryScript_PERSONAL_USE_ONLY.otf'),
-    GoodMatcha: require('../assets/fonts/GoodMatcha.otf')
+    MachineryScript: require("../assets/fonts/MachineryScript_PERSONAL_USE_ONLY.otf"),
+    GoodMatcha: require("../assets/fonts/GoodMatcha.otf"),
   });
 
   // Hide the splash screen when the fonts are loaded
@@ -30,8 +30,11 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
-  <Stack screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="index" />
-  </Stack>
-  )
+    <>
+      <StatusBar style="light" />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+      </Stack>
+    </>
+  );
 }
